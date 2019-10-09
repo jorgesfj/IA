@@ -17,22 +17,22 @@ def gerarpopin():
 	while cont<30:
 		listaindi = []
 		prim = lista[randint(0,4)]
+		listaindi.append(prim)
 		sec = lista[randint(0,4)]
 		ter = lista[randint(0,4)]
 		quar = lista[randint(0,4)]
 		quin = lista[randint(0,4)]
-		while sec == prim:
-			sec = lista[randint(0,4)]
-		while ter == (prim or ter):
-			ter = lista[randint(0,4)]
-		while quar == (prim or sec or ter):
-			quar = lista[randint(0,4)]
-		while quin == (prim or sec or ter or quar):
-			quin = lista[randint(0,4)]
-		listaindi.append(prim)
+		while sec in listaindi:
+				sec = lista[randint(0,4)]
 		listaindi.append(sec)
+		while ter in listaindi:
+				ter = lista[randint(0,4)]
 		listaindi.append(ter)
+		while quar in listaindi:
+				quar = lista[randint(0,4)]
 		listaindi.append(quar)
+		while quin in listaindi:
+				quin = lista[randint(0,4)]
 		listaindi.append(quin)
 		if listaindi is not listafin:
 			listafin.append(listaindi)
@@ -53,6 +53,5 @@ def funcapt(lista):
 		lista2.append("{:.2f}".format(aux))
 	return lista2
 
-a = funcapt(gerarpopin())
-for i in range(len(a)):
-	print(a[i])
+for i in range(len(gerarpopin())):
+	print(gerarpopin()[i])
