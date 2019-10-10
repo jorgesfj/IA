@@ -23,17 +23,18 @@ def gerarpopin():
 		quar = lista[randint(0,4)]
 		quin = lista[randint(0,4)]
 		while sec in listaindi:
-				sec = lista[randint(0,4)]
+			sec = lista[randint(0,4)]
 		listaindi.append(sec)
 		while ter in listaindi:
-				ter = lista[randint(0,4)]
+			ter = lista[randint(0,4)]
 		listaindi.append(ter)
 		while quar in listaindi:
-				quar = lista[randint(0,4)]
+			quar = lista[randint(0,4)]
 		listaindi.append(quar)
 		while quin in listaindi:
-				quin = lista[randint(0,4)]
+			quin = lista[randint(0,4)]
 		listaindi.append(quin)
+
 		if listaindi is not listafin:
 			listafin.append(listaindi)
 		cont+=1
@@ -53,5 +54,14 @@ def funcapt(lista):
 		lista2.append("{:.2f}".format(aux))
 	return lista2
 
-for i in range(len(gerarpopin())):
-	print(gerarpopin()[i])
+def valorviagem(lista):
+	#para cada metro ele gasta 0.50 centavos
+	listavalor = []
+	for i in range(len(lista)):
+		listavalor.append(float(lista[i])*0.5)
+
+	return listavalor
+
+a = valorviagem(funcapt(gerarpopin()))
+for i in range(len(a)):
+	print(a[i])
