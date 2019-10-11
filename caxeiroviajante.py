@@ -10,35 +10,34 @@ def cidades():
 	return allcity
 
 
-def gerarpopin():
-	lista = cidades()
-	cont = 0
+def random_cromossomo():
 	listafin = []
-	while cont<30:
-		listaindi = []
-		prim = lista[randint(0,4)]
-		listaindi.append(prim)
-		sec = lista[randint(0,4)]
-		ter = lista[randint(0,4)]
-		quar = lista[randint(0,4)]
-		quin = lista[randint(0,4)]
-		while sec in listaindi:
-			sec = lista[randint(0,4)]
-		listaindi.append(sec)
-		while ter in listaindi:
-			ter = lista[randint(0,4)]
-		listaindi.append(ter)
-		while quar in listaindi:
-			quar = lista[randint(0,4)]
-		listaindi.append(quar)
-		while quin in listaindi:
-			quin = lista[randint(0,4)]
-		listaindi.append(quin)
+	listaindi = []
+	prim = cidades()[randint(0,4)]
+	listaindi.append(prim)
+	sec = cidades()[randint(0,4)]
+	ter = cidades()[randint(0,4)]
+	quar = cidades()[randint(0,4)]
+	quin = cidades()[randint(0,4)]
+	while sec in listaindi:
+		sec = cidades()[randint(0,4)]
+	listaindi.append(sec)
+	while ter in listaindi:
+		ter = cidades()[randint(0,4)]
+	listaindi.append(ter)
+	while quar in listaindi:
+		quar = cidades()[randint(0,4)]
+	listaindi.append(quar)
+	while quin in listaindi:
+		quin = cidades()[randint(0,4)]
+	listaindi.append(quin)
 
-		if listaindi is not listafin:
-			listafin.append(listaindi)
-		cont+=1
+	if listaindi is not listafin:
+		listafin.append(listaindi)
 	return listafin
+
+#def random_populacao:
+
 
 def distancia2pt(x1,x2,y1,y2):
 	dbp = (((x2-x1)**2) + ((y2-y1)**2))**(1/2)
@@ -62,6 +61,6 @@ def valorviagem(lista):
 
 	return listavalor
 
-a = valorviagem(funcapt(gerarpopin()))
+a = valorviagem(funcapt(random_cromossomo()))
 for i in range(len(a)):
 	print(a[i])
