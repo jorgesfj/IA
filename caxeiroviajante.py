@@ -47,7 +47,7 @@ def random_populacao():
 def distancia2pt(x1,x2,y1,y2):
 	dbp = (((x2-x1)**2) + ((y2-y1)**2))**(1/2)
 	return dbp
-
+ 
 def funcapt(lista):
 	lista_distancias = []
 	for i in range(len(lista)):
